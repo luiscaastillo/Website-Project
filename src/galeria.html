@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Photo gallery of České Budějovice and surroundings: square, Black Tower, Hluboká, Český Krumlov and more.">
+  <title>Gallery — ČB Routes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Home">
+        <svg xmlns="https://i.pinimg.com/736x/82/56/14/825614b832bc12dd60bae4aeaf392ade.jpg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        ČB Routes
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rutas-urbanas.html">Urban Routes</a></li>
+        <li><a href="rutas-naturales.html">Nature Routes</a></li>
+        <li><a href="galeria.html" class="active">Gallery</a></li>
+        <li><a href="contacto.html">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" type="button">🌙 Dark Theme</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero hero-small">
+    <div class="hero-bg" style="background-image: url('images/cesky_krumlov_panorama.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Gallery</h1>
+      <p class="hero-subtitle">Images of the most outstanding places of the region</p>
+    </div>
+  </header>
+
+  <!-- Gallery -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">Discover in Images</h2>
+      <p class="section-subtitle fade-in">Click on any image to view it in full size</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item fade-in" data-title="Přemysl Otakar II Square">
+          <img src="images/ceske_budejovice_main_square.jpg" alt="Přemysl Otakar II Square, the main square of České Budějovice" loading="lazy">
+          <div class="overlay">
+            <h4>Přemysl Otakar II Square</h4>
+            <p>The largest square in the Czech Republic</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Black Tower (Černá věž)">
+          <img src="images/black_tower.jpg" alt="Black Tower, Renaissance tower of České Budějovice" loading="lazy">
+          <div class="overlay">
+            <h4>Black Tower</h4>
+            <p>225 steps to the best views</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Samson Fountain">
+          <img src="images/samson_fountain.jpg" alt="Baroque Samson Fountain in the center of the main square" loading="lazy">
+          <div class="overlay">
+            <h4>Samson Fountain</h4>
+            <p>Baroque symbol of the city</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Historic Streets of České Budějovice">
+          <img src="images/ceske_budejovice_historic_streets.jpg" alt="Cobbled streets of the historic center of České Budějovice" loading="lazy">
+          <div class="overlay">
+            <h4>Historic Center</h4>
+            <p>Cobbled streets with medieval charm</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Hluboká nad Vltavou Castle">
+          <img src="images/hluboka_castle.jpg" alt="Neo-Gothic Hluboká nad Vltavou Castle" loading="lazy">
+          <div class="overlay">
+            <h4>Hluboká Castle</h4>
+            <p>The most beautiful castle in the Czech Republic</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Český Krumlov">
+          <img src="images/cesky_krumlov_panorama.jpg" alt="Panoramic view of Český Krumlov with the castle and the Vltava river" loading="lazy">
+          <div class="overlay">
+            <h4>Český Krumlov</h4>
+            <p>UNESCO World Heritage Site</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Lipno Lake">
+          <img src="images/lipno_lake.jpg" alt="Lipno reservoir surrounded by nature" loading="lazy">
+          <div class="overlay">
+            <h4>Lipno Lake</h4>
+            <p>The sea of South Bohemia</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Šumava National Park">
+          <img src="images/sumava_forest.jpg" alt="Forests of Šumava National Park" loading="lazy">
+          <div class="overlay">
+            <h4>Šumava</h4>
+            <p>Virgin nature in the Bohemian Forest</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="South Bohemia Region">
+          <img src="images/south_bohemia_banner.jpg" alt="Landscape of the South Bohemia region" loading="lazy">
+          <div class="overlay">
+            <h4>South Bohemia</h4>
+            <p>Landscapes of the region</p>
+          </div>
+        </div>
+
+        <!-- Personal photos of České Budějovice and surroundings -->
+        <div class="gallery-item fade-in" data-title="České Budějovice — Personal View">
+          <img src="images/user_photo_1.jpg?v=4" alt="Personal photo of České Budějovice">
+          <div class="overlay">
+            <h4>Personal View</h4>
+            <p>Walking around České Budějovice</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Streets of České Budějovice">
+          <img src="images/user_photo_2.jpg?v=4" alt="Streets of České Budějovice">
+          <div class="overlay">
+            <h4>City Streets</h4>
+            <p>Exploring the historic streets</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="South Bohemia Architecture">
+          <img src="images/user_photo_3.jpg?v=4" alt="Architecture in South Bohemia">
+          <div class="overlay">
+            <h4>Architecture</h4>
+            <p>Historic buildings up close</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="City Corner">
+          <img src="images/user_photo_4.jpg?v=4" alt="Picturesque corner of the city">
+          <div class="overlay">
+            <h4>Picturesque Corner</h4>
+            <p>Hidden spots in the city</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Historic Center">
+          <img src="images/user_photo_5.jpg?v=4" alt="View of the historic center">
+          <div class="overlay">
+            <h4>Historic Center</h4>
+            <p>Heart of České Budějovice</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Charming Square">
+          <img src="images/user_photo_6.jpg?v=4" alt="A charming square in the old town">
+          <div class="overlay">
+            <h4>Charming Square</h4>
+            <p>Squares full of history</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Facades and Details">
+          <img src="images/user_photo_7.jpg?v=4" alt="Historic facades and architectural details">
+          <div class="overlay">
+            <h4>Facades and Details</h4>
+            <p>Baroque and Renaissance details</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Narrow Streets">
+          <img src="images/user_photo_8.jpg?v=4" alt="Narrow streets of the old town">
+          <div class="overlay">
+            <h4>Narrow Streets</h4>
+            <p>Getting lost in the old town</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Urban Landscape">
+          <img src="images/user_photo_9.jpg?v=4" alt="Urban landscape of České Budějovice">
+          <div class="overlay">
+            <h4>Urban Landscape</h4>
+            <p>Daily life in the city</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="City Atmosphere">
+          <img src="images/user_photo_10.jpg?v=4" alt="City atmosphere and daily life">
+          <div class="overlay">
+            <h4>City Atmosphere</h4>
+            <p>The charm of everyday scenes</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Historic Building">
+          <img src="images/user_photo_11.jpg?v=4" alt="Historic building in the center">
+          <div class="overlay">
+            <h4>Historic Building</h4>
+            <p>Architectural heritage of the region</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Cobblestone Paths">
+          <img src="images/user_photo_12.jpg?v=4" alt="Cobblestone paths of the old town">
+          <div class="overlay">
+            <h4>Cobblestone Paths</h4>
+            <p>Tradition under your feet</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Authentic South Bohemia">
+          <img src="images/user_photo_13.jpg?v=4" alt="Authentic view of South Bohemia">
+          <div class="overlay">
+            <h4>Authentic Bohemia</h4>
+            <p>The genuine side of the region</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Local Character">
+          <img src="images/user_photo_14.jpg?v=4" alt="Local character of České Budějovice">
+          <div class="overlay">
+            <h4>Local Character</h4>
+            <p>Personality of the city</p>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in" data-title="Memorable Moments">
+          <img src="images/user_photo_15.jpg?v=4" alt="Memorable moments in České Budějovice">
+          <div class="overlay">
+            <h4>Memorable Moments</h4>
+            <p>Captured moments from the trip</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+    <img class="lightbox-content" id="lightbox-img" src="" alt="">
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>ČB Routes</h3>
+        <p>Website dedicated to routes and excursions in České Budějovice and the South Bohemia region, Czech Republic.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rutas-urbanas.html">Urban Routes</a></li>
+          <li><a href="rutas-naturales.html">Nature Routes</a></li>
+          <li><a href="galeria.html">Gallery</a></li>
+          <li><a href="contacto.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Information</h3>
+        <p>Academic project — Web Development Course</p>
+        <p>Content for educational purposes</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ČB Routes — České Budějovice. Academic project.</p>
+      <div class="footer-validators">
+        <a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="noopener noreferrer">
+          ✓ Validate HTML (W3C)
+        </a>
+        <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener noreferrer">
+          ✓ Validate CSS (W3C)
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

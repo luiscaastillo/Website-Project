@@ -1,267 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Czechia Tourism - Semester Project</title>
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
-    <link rel="stylesheet" href="css/tooplate-style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the best routes and excursions in České Budějovice and its surroundings. Urban routes, nature and culture in South Bohemia.">
+  <title>České Budějovice — Routes and Excursions</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+<body>
 
-    <body>
-        <div class="tm-main-content" id="top">
-            <div class="tm-top-bar-bg"></div>
-            <div class="tm-top-bar" id="tm-top-bar">
-                <div class="container">
-                    <div class="row">
-                        <nav class="navbar navbar-expand-lg narbar-light">
-                            <a class="navbar-brand mr-auto" href="#">
-                                <img src="img/logo2.svg" alt="Logo">
-                                Ceske Travel
-                            </a>
-                            <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
-                                <ul class="navbar-nav ml-auto">
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#tm-section-4">Activities</a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#tm-section-5">Cities</a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#tm-section-6">Contact Us</a>
-                                  </li>
-                                </ul>
-                            </div>                            
-                        </nav>            
-                    </div>
-                </div>
-            </div>
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Home">
+        <svg xmlns="https://i.pinimg.com/736x/f2/3f/18/f23f1877ddee5b2fdd9c3d6403e3cf64.jpg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        ČB Routes
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="rutas-urbanas.html">Urban Routes</a></li>
+        <li><a href="rutas-naturales.html">Nature Routes</a></li>
+        <li><a href="galeria.html">Gallery</a></li>
+        <li><a href="contacto.html">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" type="button">🌙 Dark Theme</button></li>
+      </ul>
+    </div>
+  </nav>
 
-            <div class="tm-section tm-bg-img" id="tm-section-1">
-                <div class="tm-bg-white ie-container-width-fix-2">
-                    <div class="container ie-h-align-center-fix">
-                        <div class="row">
-                            <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
-                                <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
-                                    <div class="form-row tm-search-form-row">
-                                        <div class="form-group tm-form-element tm-form-element-100">
-                                            <i class="fa fa-map-marker fa-2x tm-form-element-icon"></i>
-                                            <input name="city" type="text" class="form-control" id="inputCity" placeholder="Your destination in Czechia...">
-                                        </div>
-                                        <div class="form-group tm-form-element tm-form-element-50">
-                                            <i class="fa fa-calendar fa-2x tm-form-element-icon"></i>
-                                            <input name="check-in" type="text" class="form-control" id="inputCheckIn" placeholder="Check In">
-                                        </div>
-                                        <div class="form-group tm-form-element tm-form-element-50">
-                                            <i class="fa fa-calendar fa-2x tm-form-element-icon"></i>
-                                            <input name="check-out" type="text" class="form-control" id="inputCheckOut" placeholder="Check Out">
-                                        </div>
-                                    </div>
-                                    <div class="form-row tm-search-form-row">
-                                        <div class="form-group tm-form-element tm-form-element-2">                                            
-                                            <select name="adult" class="form-control tm-select" id="adult">
-                                                <option value="">Adults</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select>
-                                            <i class="fa fa-2x fa-user tm-form-element-icon"></i>
-                                        </div>
-                                        <div class="form-group tm-form-element tm-form-element-2">                                            
-                                            <select name="children" class="form-control tm-select" id="children">
-                                                <option value="">Children</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
-                                            <i class="fa fa-user tm-form-element-icon tm-form-element-icon-small"></i>
-                                        </div>
-                                        <div class="form-group tm-form-element tm-form-element-100">
-                                            <button type="submit" class="btn btn-primary tm-btn-search">Check Availability</button>
-                                        </div>
-                                      </div>
-                                </form>
-                            </div>                        
-                        </div>      
-                    </div>
-                </div>                  
-            </div>
-            
-            <div class="tm-section tm-section-pad tm-bg-gray" id="tm-section-4">
-                <div class="container">
-                    <header class="text-center mb-5">
-                        <h2 class="tm-section-title text-dark">What to do in České Budějovice</h2>
-                    </header>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
-                            <div class="tm-article-carousel">                            
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/budvar-brewery.jpeg" alt="Budvar Brewery" class="img-fluid mx-auto d-block">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Budweiser Budvar Brewery</h3></header>
-                                        <p>Founded in 1895, it produces the original Czech beer.
-                                        <br>The tour includes a direct tasting for 290 CZK (Students: 220 CZK).</p>
-                                        <a href="#" class="text-uppercase btn-primary tm-btn-primary">View tour</a>
-                                    </div>                                
-                                </article>                    
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/castle.jpg" alt="Hluboká Castle" class="img-fluid mx-auto d-block">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Hluboká Castle</h3></header>
-                                        <p>Inspired by Windsor, this neo-Gothic castle is one of the most beautiful in the country.
-                                        <br>Adult entry: 300 CZK; Teens: 240 CZK.</p>
-                                        <a href="#" class="text-uppercase btn-primary tm-btn-primary">View castle</a>
-                                    </div>                                
-                                </article>
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/budvar-arena.jpeg" alt="Ice Hockey" class="img-fluid mx-auto d-block">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Motor České Budějovice</h3></header>
-                                        <p>Experience the intensity of ice hockey at the Budvar Arena.
-                                        <br>Standing tickets from 260 CZK, only 100 CZK with an ISIC card.</p>
-                                        <a href="#" class="text-uppercase btn-primary tm-btn-primary">View team</a>
-                                    </div>                                
-                                </article>
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/kayak.jpg" alt="Vltava Kayak" class="img-fluid mx-auto d-block">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Vltava River Kayaking</h3></header>
-                                        <p>Enjoy nature and city views at sunset. Ideal for beginners on 1 to 2-hour trips.</p>
-                                        <a href="#" class="text-uppercase btn-primary tm-btn-primary">Book kayak</a>
-                                    </div>                                
-                                </article>
-                            </div>    
-                        </div>
-                        
-                        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-recommended-container">
-                            <div class="tm-bg-white">
-                                <div class="tm-bg-primary tm-sidebar-pad">
-                                    <h3 class="tm-color-white tm-sidebar-title">City Guide</h3>
-                                    <p class="tm-color-white tm-margin-b-0 tm-font-light">Explore the treasures of Bohemia and Moravia.</p>
-                                </div>
-                                <div class="tm-sidebar-pad-2">
-                                    <a href="#" class="media tm-media tm-recommended-item">
-                                        <div class="media-body tm-media-body tm-bg-gray d-flex flex-column justify-content-center align-items-center" style="min-height: 50px;">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title mb-0 text-center">Prague</h4>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="media tm-media tm-recommended-item">
-                                        <div class="media-body tm-media-body tm-bg-gray d-flex flex-column justify-content-center align-items-center" style="min-height: 50px;">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title mb-0 text-center">Brno</h4>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="media tm-media tm-recommended-item">
-                                        <div class="media-body tm-media-body tm-bg-gray d-flex flex-column justify-content-center align-items-center" style="min-height: 50px;">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title mb-0 text-center">České Budějovice</h4>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="media tm-media tm-recommended-item">
-                                        <div class="media-body tm-media-body tm-bg-gray d-flex flex-column justify-content-center align-items-center" style="min-height: 50px;">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title mb-0 text-center">Český Krumlov</h4>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <footer class="tm-bg-dark-blue">
-                <div class="container">
-                    <div class="row">
-                        <p class="col-sm-12 text-center tm-font-light tm-color-white p-4 tm-margin-b-0">
-                        Copyright &copy; <span class="tm-current-year">2026</span> - Ceske Travel     
-                    </div>
-                </div>                
-            </footer>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-bg" style="background-image: url('images/south_bohemia_banner.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">České Budějovice</h1>
+      <p class="hero-subtitle">Discover routes and excursions in the jewel of South Bohemia</p>
+      <a href="rutas-urbanas.html" class="btn">Explore Routes</a>
+    </div>
+  </header>
+
+  <!-- Section: About the city -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title fade-in">Welcome to České Budějovice</h2>
+      <p class="section-subtitle fade-in">The capital of South Bohemia, founded in 1265 by King Přemysl Otakar II</p>
+      <div class="card-grid">
+        <div class="card fade-in">
+          <img src="images/ceske_budejovice_main_square.jpg" alt="Přemysl Otakar II Square, one of the largest squares in Europe" class="card-img" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">History</span>
+            <h3>Přemysl Otakar II Square</h3>
+            <p>One of the largest squares in Europe, surrounded by impressive Baroque and Renaissance buildings. At its center stands the majestic Samson Fountain.</p>
+          </div>
         </div>
-        
-        <script src="js/jquery-1.11.3.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/datepicker.min.js"></script>
-        <script src="js/jquery.singlePageNav.min.js"></script>
-        <script src="slick/slick.min.js"></script>
-        <script>
-            function setCarousel() {
-                if ($('.tm-article-carousel').hasClass('slick-initialized')) {
-                    $('.tm-article-carousel').slick('destroy');
-                } 
+        <div class="card fade-in">
+          <img src="images/black_tower.jpg" alt="Black Tower (Černá věž) of České Budějovice" class="card-img" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Architecture</span>
+            <h3>Black Tower (Černá věž)</h3>
+            <p>Climb the 225 steps of this 16th-century Renaissance tower and enjoy unmatched panoramic views of the city and its surroundings.</p>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <img src="images/hluboka_castle.jpg" alt="Neo-Gothic Hluboká nad Vltavou Castle" class="card-img" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Excursion</span>
+            <h3>Hluboká Castle</h3>
+            <p>Only 10 km from the city, this neo-Gothic castle looks like something out of a fairy tale. A must-see excursion from České Budějovice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                if($(window).width() < 438){
-                    $('.tm-article-carousel').slick({
-                        infinite: false,
-                        dots: true,
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    });
-                }
-                else {
-                 $('.tm-article-carousel').slick({
-                        infinite: false,
-                        dots: true,
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    });   
-                }
-            }
+  <!-- Section: Types of Routes -->
+  <section class="section" style="background: var(--bg-accent);">
+    <div class="container">
+      <h2 class="section-title fade-in">Our Routes</h2>
+      <p class="section-subtitle fade-in">Explore the city and its surroundings with our recommended routes</p>
+      <div class="card-grid">
+        <div class="card fade-in">
+          <div class="card-body" style="text-align: center; padding: 2.5rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:48px;height:48px;fill:var(--accent);margin-bottom:1rem;" aria-hidden="true"><path d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 8H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/></svg>
+            <h3>Urban Routes</h3>
+            <p>Walk through the historic center, its squares, churches, towers and cobbled streets full of history.</p>
+            <a href="rutas-urbanas.html" class="btn" style="margin-top: 1rem;">View Urban Routes</a>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <div class="card-body" style="text-align: center; padding: 2.5rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:48px;height:48px;fill:var(--accent);margin-bottom:1rem;" aria-hidden="true"><path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22L14 6z"/></svg>
+            <h3>Nature Routes</h3>
+            <p>Discover castles, lakes, forests and fairy-tale villages in the surroundings of South Bohemia.</p>
+            <a href="rutas-naturales.html" class="btn" style="margin-top: 1rem;">View Nature Routes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            function setPageNav(){
-                if($(window).width() > 991) {
-                    $('#tm-top-bar').singlePageNav({
-                        currentClass:'active',
-                        offset: 79
-                    });   
-                }
-                else {
-                    $('#tm-top-bar').singlePageNav({
-                        currentClass:'active',
-                        offset: 65
-                    });   
-                }
-            }
-       
-            $(document).ready(function(){
-                $(window).on("scroll", function() {
-                    if($(window).scrollTop() > 100) {
-                        $(".tm-top-bar").addClass("active");
-                    } else {
-                       $(".tm-top-bar").removeClass("active");
-                    }
-                });      
+  <!-- Section: Why visit -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">Why Visit České Budějovice?</h2>
+      <div class="card-grid">
+        <div class="card fade-in">
+          <div class="card-body">
+            <h3>🏛️ History and Architecture</h3>
+            <p>The city hosts one of the largest squares in Europe, surrounded by stunning Baroque and Renaissance buildings that tell centuries of history.</p>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <div class="card-body">
+            <h3>🍺 World-Renowned Beer</h3>
+            <p>Home of the original Budweiser Budvar beer, a brewing tradition dating back to the city's founding in the 13th century.</p>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <div class="card-body">
+            <h3>🗺️ Ideal Starting Point</h3>
+            <p>Perfect location to explore Český Krumlov (UNESCO Heritage), Hluboká Castle, Lipno Lake and Šumava National Park.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                // Date Picker
-                const pickerCheckIn = datepicker('#inputCheckIn');
-                const pickerCheckOut = datepicker('#inputCheckOut');
-                
-                setCarousel();
-                setPageNav();
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>ČB Routes</h3>
+        <p>Website dedicated to routes and excursions in České Budějovice and the South Bohemia region, Czech Republic.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rutas-urbanas.html">Urban Routes</a></li>
+          <li><a href="rutas-naturales.html">Nature Routes</a></li>
+          <li><a href="galeria.html">Gallery</a></li>
+          <li><a href="contacto.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Information</h3>
+        <p>Academic project — Web Development Course</p>
+        <p>Content for educational purposes</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ČB Routes — České Budějovice. Academic project.</p>
+      <div class="footer-validators">
+        <a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="noopener noreferrer">
+          ✓ Validate HTML (W3C)
+        </a>
+        <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener noreferrer">
+          ✓ Validate CSS (W3C)
+        </a>
+      </div>
+    </div>
+  </footer>
 
-                $(window).resize(function() {
-                  setCarousel();
-                  setPageNav();
-                });
-
-                $('.nav-link').click(function(){
-                    $('#mainNav').removeClass('show');
-                });
-
-                $('.tm-current-year').text(new Date().getFullYear());                           
-            });
-        </script>             
+  <script src="js/main.js"></script>
 </body>
 </html>
