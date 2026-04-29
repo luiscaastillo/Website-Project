@@ -76,38 +76,3 @@ export function borrarDato(rutaRama, id) {
       console.error("Error al borrar:", error);
     });
 }
-
-// Ejemplos de uso que puedes llamar en tu app:
-
-const rutaDefault = {
-  titulo: "Route 1: The Grandeur of the Square",
-  duracion: "2 hours",
-  dificultad: "Easy",
-  distancia: "2.5 km",
-  descripcionCorta: "Panoramic view of Přemysl Otakar II Square",
-  puntos_interes: [
-    {
-      lugar: "Přemysl Otakar II Square",
-      detalle: "Start your tour in this impressive square, one of the largest in Europe (133 × 133 meters). Admire the Baroque and Renaissance buildings surrounding it."
-    },
-    {
-      lugar: "Samson Fountain (Samsonova kašna)",
-      detalle: "In the center of the square, this 18th-century Baroque fountain is one of the most photographed symbols of the city."
-    },
-    {
-      lugar: "Town Hall (Radnice)",
-      detalle: "The majestic Baroque Town Hall building, with its decorated facade and three towers, dominates one side of the square."
-    },
-    {
-      lugar: "St. Nicholas Cathedral (Katedrála sv. Mikuláše)",
-      detalle: "A few steps from the square, this imposing Baroque cathedral houses valuable frescoes and an impressive organ."
-    },
-    {
-      lugar: "Black Tower (Černá věž)",
-      detalle: "Climb the 225 steps of this 16th-century hola for unmatched panoramic views of the city."
-    }
-  ]
-};
-
-console.log("Subiendo datos default a Firebase...");
-crearDato("rutas_urbanas", "route_1", rutaDefault);
