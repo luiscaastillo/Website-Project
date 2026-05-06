@@ -14,11 +14,20 @@ export async function crearDato(rutaRama, id, datos) {
       },
       body: JSON.stringify(datos)
     });
-    const result = await response.json();
-    console.log("Crear:", result);
-    return result;
+    
+    // Si la respuesta no es OK (ej. 404 de Vercel) y no es JSON, esto fallaba y volvía 'undefined'
+    const contentType = response.headers.get("content-type");
+    if (contentType && contentType.indexOf("application/json") !== -1) {
+       const result = await response.json();
+       console.log("Crear:", result);
+       return result;
+    } else {
+       const text = await response.text();
+       throw new Error(`API returned non-JSON. Text: ${text}`);
+    }
   } catch (error) {
     console.error("Error al guardar:", error);
+    return null;
   }
 }
 

@@ -27,7 +27,8 @@ document.getElementById('saveBtn').addEventListener('click', async () => {
     if (response && response.success) {
         alert("Route saved successfully!");
     } else {
-        alert("Failed to save: " + (response ? response.message : 'Unauthorized'));
+        console.error("API response was:", response);
+        alert("Failed to save: " + (response ? response.message : 'Network/Cache Error. Please Hard Refresh the page.'));
     }
 });
 
