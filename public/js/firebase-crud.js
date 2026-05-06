@@ -5,9 +5,13 @@ const API_BASE_URL = 'http://localhost:3000/api/data';
 // ---------------------------------------------------------
 export async function crearDato(rutaRama, id, datos) {
   try {
+    const token = localStorage.getItem('adminToken') || '';
     const response = await fetch(`${API_BASE_URL}/${rutaRama}/${id}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
       body: JSON.stringify(datos)
     });
     const result = await response.json();
@@ -43,9 +47,13 @@ export async function leerDatos(rutaRama) {
 // ---------------------------------------------------------
 export async function actualizarDato(rutaRama, id, nuevosDatos) {
   try {
+    const token = localStorage.getItem('adminToken') || '';
     const response = await fetch(`${API_BASE_URL}/${rutaRama}/${id}`, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
       body: JSON.stringify(nuevosDatos)
     });
     const result = await response.json();
@@ -61,8 +69,12 @@ export async function actualizarDato(rutaRama, id, nuevosDatos) {
 // ---------------------------------------------------------
 export async function borrarDato(rutaRama, id) {
   try {
+    const token = localStorage.getItem('adminToken') || '';
     const response = await fetch(`${API_BASE_URL}/${rutaRama}/${id}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
     });
     const result = await response.json();
     console.log("Borrar:", result);

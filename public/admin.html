@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — ČB Routes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container" style="margin-top: 50px;">
+    <h2>Admin Dashboard</h2>
+    <button id="logoutBtn" style="float: right; margin-bottom: 20px;" class="btn">Logout</button>
+    <div style="clear: both;"></div>
+    
+    <div style="border: 1px solid #ccc; padding: 20px; border-radius: 5px;">
+      <h3>Add / Update Route</h3>
+      <input type="text" id="routeCategory" placeholder="Category (e.g., rutas-naturales)" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+      <input type="text" id="routeId" placeholder="Route ID (e.g., hluboka)" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+      <input type="text" id="routeTitle" placeholder="Route Title" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+      <input type="text" id="routeImg" placeholder="Image URL (e.g., img/hluboka_castle.jpg)" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+      <textarea id="routeDesc" placeholder="Route Description (HTML allowed)" style="width: 100%; padding: 10px; margin-bottom: 10px; height: 100px;"></textarea>
+      
+      <button id="saveBtn" class="btn">Save Route</button>
+      <button id="deleteBtn" class="btn" style="background: red; color: white;">Delete Route</button>
+    </div>
+  </div>
+  
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

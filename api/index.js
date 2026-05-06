@@ -46,11 +46,18 @@ app.get('/api/data/:collection', async (req, res) => {
 // =====================================
 // API PRIVATE (CREATE, UPDATE, DELETE)
 // =====================================
-// Idealmente aquí podrías añadir un middleware de autenticación 
-// para validar que la llamada provenga de la zona "Private".
+// Middleware simple de Autenticación
+const requireAuth = (req, res, next) => {
+  const token = req.headers['authorization'];
+  if (token === 'Bearer my-secret-admin-token') {
+    next();
+  } else {
+    res.status(403).json({ success: false, message: "Unauthorized access" });
+  }
+};
 
 // 1. CREATE / OVERWRITE
-app.post('/api/data/:collection/:id', async (req, res) => {
+app.post('/api/data/:collection/:id', requireAuth, async (req, res) => {
   const { collection, id } = req.params;
   const newData = req.body;
   
@@ -63,7 +70,7 @@ app.post('/api/data/:collection/:id', async (req, res) => {
 });
 
 // 2. UPDATE (Partial) 
-app.put('/api/data/:collection/:id', async (req, res) => {
+app.put('/api/data/:collection/:id', requireAuth, async (req, res) => {
   const { collection, id } = req.params;
   const updateData = req.body;
   const updates = {};
@@ -78,7 +85,7 @@ app.put('/api/data/:collection/:id', async (req, res) => {
 });
 
 // 3. DELETE
-app.delete('/api/data/:collection/:id', async (req, res) => {
+app.delete('/api/data/:collection/:id', requireAuth, async (req, res) => {
   const { collection, id } = req.params;
   try {
     await remove(ref(db, `${collection}/${id}`));

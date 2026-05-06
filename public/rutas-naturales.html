@@ -45,9 +45,15 @@
     <div class="container">
       <h2 class="section-title fade-in">Recommended Excursions</h2>
       <p class="section-subtitle fade-in">Castles, lakes, forests and storybook villages close to the city</p>
+      
+      <div id="dynamic-routes">
+        <!-- Rutas cargadas dinámicamente desde la BD irán aquí -->
+        <p style="text-align: center;">Loading routes...</p>
+      </div>
+    </div>
+  </section>
 
-      <!-- Hluboká -->
-      <div class="route-section fade-in">
+  <script type="module" src="js/render-rutas.js"></script>
         <h3>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 8H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/></svg>
           Hluboká nad Vltavou Castle
