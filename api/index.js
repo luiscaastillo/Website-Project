@@ -46,7 +46,7 @@ app.get('/api/data/:collection', async (req, res) => {
 // =====================================
 // API PRIVATE (CREATE, UPDATE, DELETE)
 // =====================================
-// Middleware simple de Autenticación
+
 const requireAuth = (req, res, next) => {
   const token = req.headers['authorization'];
   if (token === 'Bearer my-secret-admin-token') {
