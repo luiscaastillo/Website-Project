@@ -95,7 +95,7 @@ app.delete('/api/data/:collection/:id', requireAuth, async (req, res) => {
   }
 });
 
-const PORT = 3000;
+const PORT = 3001;
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 });

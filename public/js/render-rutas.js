@@ -34,7 +34,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (route.puntos_interes && Array.isArray(route.puntos_interes)) {
                 puntosHtml = '<ul class="route-stops">';
                 route.puntos_interes.forEach(punto => {
-                    puntosHtml += `<li>${punto}</li>`;
+                    if (typeof punto === 'object' && punto !== null) {
+                        puntosHtml += `<li><strong>${punto.lugar || ''}</strong> — ${punto.detalle || ''}</li>`;
+                    } else {
+                        puntosHtml += `<li>${punto}</li>`;
+                    }
                 });
                 puntosHtml += '</ul>';
             }
