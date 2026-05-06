@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:3001/api/data';
+const API_BASE_URL = 'http://localhost:3000/api/data';
 
 // ---------------------------------------------------------
 // 1. CREATE (Crear o sobrescribir datos puntuales)
