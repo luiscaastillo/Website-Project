@@ -78,4 +78,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     container.innerHTML = fragments.join('');
+
+    // Reveal dynamically injected routes (main observer runs before these exist).
+    const newFadeElements = container.querySelectorAll('.fade-in');
+    if (newFadeElements.length > 0) {
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                for (let i = 0; i < entries.length; i++) {
+                    if (entries[i].isIntersecting) {
+                        entries[i].target.classList.add('visible');
+                        obs.unobserve(entries[i].target);
+                    }
+                }
+            }, { threshold: 0.15 });
+
+            newFadeElements.forEach((el) => observer.observe(el));
+        } else {
+            newFadeElements.forEach((el) => el.classList.add('visible'));
+        }
+    }
 });
